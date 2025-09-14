@@ -1,15 +1,21 @@
 `timescale 1ns / 1ps
-module cpu(clk);
+
+module cpu(clk,instr,alures,r1,r2,wd);
 input clk;
-wire [7:0]instr;
-wire [2:0]alures,wd,r1,r2;
+input [7:0]instr;
+output [2:0]alures,wd,r1,r2;
+
+wire [15:0] watermark = {8'h53, 8'h47};
+wire watermark_keep = ^watermark;
+//wire [7:0]instr;
+//wire [2:0]alures,wd,r1,r2;
+wire [1:0]aopc;
 wire [4:0]pcoa,ia,ares1,ares2,sia,pria;
-wire we,br,zf,sel1,sel2,bre,aopc,t1,t2,wf,nwe,en;
+wire we,br,zf,sel1,sel2,bre,t1,t2,wf,nwe,en;
 
 mux_5bit m1 (.o(ia),.a(ares1),.b(ares2),.s(sel1));
 pc p1 (.pci(ia),.pco(pcoa),.clk(clk));
 pc_reg p2 (.in(pria),.o(pcoa),.en(en));
-instruction_mem im (.a(pcoa),.rd(instr));
 decoder d (.op(instr[7:5]),.br(br),.bre(bre),.sel(sel2),.we(we),.aluop(aopc),.en(en));
 
 nor n1 (t1,br,zf);

@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+t=0 | instr=00000000 | r1=xxx r2=xxx | ALU=xxx | wd=000 | R0=xxx R1=xxx R2=xxx R3=xxx
+t=10000 | instr=00000000 | r1=xxx r2=xxx | ALU=xxx | wd=000 | R0=001 R1=001 R2=011 R3=100
+t=15000 | instr=00000000 | r1=001 r2=001 | ALU=xxx | wd=000 | R0=001 R1=001 R2=011 R3=100
+t=20000 | instr=01000010 | r1=001 r2=001 | ALU=000 | wd=010 | R0=001 R1=001 R2=011 R3=100
+$finish called at time : 90 ns : File "C:/imp folders/vlog prrojects/internship_isa_chip/internship_isa_chip.srcs/sim_1/new/cpu_tb.v" Line 49

@@ -13,6 +13,7 @@ always@ (*)
                 wf = 1'b1;
             end
         1 : o = a - b;
+        default: wf = 1'b0;
     endcase
 
 always@ (*)

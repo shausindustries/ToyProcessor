@@ -12,13 +12,13 @@ always@ (*)
             end
         
         1 : begin
-                aluop = 1'b0;
+                aluop = 1'b00;
                 we = 1'b0;
                 sel = 1'b1;
             end
         
         2 : begin
-                aluop = 1'b1;
+                aluop = 1'b01;
                 we = 1'b0;
             end
         

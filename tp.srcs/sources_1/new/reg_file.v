@@ -10,7 +10,7 @@ reg [2:0] mem [0:3];
 
 always@ (posedge clk)
     begin
-        if (we)
+        if (we == 1'b1)
             mem[a1] <= wd;
         
         rd1 <= mem[a1];

@@ -4,5 +4,8 @@ input [4:0]a;
 output [7:0]rd;
 
 reg [7:0] mem [31:0];
+initial begin
+    $readmemb("sim_1/Memory File/instr.bin", mem);
+end
 assign rd = mem[a];
 endmodule
