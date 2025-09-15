@@ -12,7 +12,7 @@ MOV REG1, 3;
 MOV REG2, 3;
 _add:
     ADD REG1, REG2;
-    CMP REG1, 6;
+    CMP REG1, REG6;
     JE _halt;
     JNE _add;
 _hlt:
